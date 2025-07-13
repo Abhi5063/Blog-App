@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 export default function Header() {
   return (
     <header>
-      <a href="" className="logo">
+      <Link to="/" className="logo">
         MyBlog
-      </a>
+      </Link>
       <nav>
         <Link to="/login">Login</Link>
-        <Link to="/regester">Register</Link>
+        <Link to="/register">Register</Link>
       </nav>
     </header>
   );

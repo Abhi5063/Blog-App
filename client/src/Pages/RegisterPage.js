@@ -3,16 +3,18 @@ import { useState } from "react";
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  async function regester(ev) {
+  async function register(ev) {
     ev.preventDefault();
-    await fetch("http://localhost:4000/register", {
+
+    const response = await fetch("http://localhost:4000/register", {
       method: "POST",
       body: JSON.stringify({ username, password }),
-      headers: { "Content-Type": "appLication/json" },
+      headers: { "Content-Type": "application/json" },
     });
+    console.log(response);
   }
   return (
-    <form className="register">
+    <form className="register" onSubmit={register}>
       <h1>Register</h1>
       <input
         type="text"

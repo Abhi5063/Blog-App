@@ -11,7 +11,11 @@ export default function RegisterPage() {
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response);
+    if (response.status !== 200) {
+      alert("register failed");
+    } else {
+      alert("registeration successful");
+    }
   }
   return (
     <form className="register" onSubmit={register}>
